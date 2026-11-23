@@ -6,7 +6,7 @@ export const profile = {
   subtitle: "systems design engineering @ uwaterloo · welcome to my pond :)",
   email: "sydneygahunia@gmail.com",
   linkedin: "https://www.linkedin.com/in/sydney-gahunia-b9a704318",
-  github: "https://github.com/sydneygahunia-wq",
+  github: "https://github.com/sydneygahunia",
 };
 
 export type Bullet = {
@@ -79,12 +79,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Brim",
+    tagline: "Wearable navigation aid for blind users · Hack Western 13",
+    stack: ["QNX", "C++", "Python", "TypeScript", "TensorFlow Lite", "React Native", "SQLite"],
+    links: [{ label: "GitHub", href: "https://github.com/tiiffanyho/brim" }],
+    bullets: [
+      "Built a hat-mounted wearable that detects people and obstacles in a blind user's path and gives spoken directions, using a Raspberry Pi 5, a USB camera and an on-device TensorFlow Lite model with no cloud.",
+      "Developed a real-time C++ pipeline on QNX, using the Sensor Framework for the camera and prioritized processes with message passing that recover on their own within 2 seconds if one fails.",
+      "Created an iPhone app in React Native that pairs securely with the hat over WebSockets, speaks warnings with the phone locked, and saves alerts and settings in SQLite on the hat.",
+      "Automated device setup, testing and boot startup with shell and Python scripts, so the system deploys and runs on the hardware with a single command.",
+    ],
+  },
+  {
     name: "Forma",
     tagline: "Full-stack e-commerce simulation",
     stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "WebSockets"],
     links: [
       { label: "Live demo", href: "https://forma-ten-bice.vercel.app" },
-      { label: "GitHub", href: "https://github.com/sydneygahunia-wq/Forma" },
+      { label: "GitHub", href: "https://github.com/sydneygahunia/Forma" },
     ],
     wakeUrl: "https://forma-api-je9l.onrender.com/api/ping",
     bullets: [
@@ -97,7 +109,7 @@ export const projects: Project[] = [
     name: "Ventra",
     tagline: "iOS heart-rate monitoring app",
     stack: ["Swift", "SwiftUI", "SwiftData", "Swift Charts", "XCTest"],
-    links: [{ label: "GitHub", href: "https://github.com/sydneygahunia-wq/svt-monitor" }],
+    links: [{ label: "GitHub", href: "https://github.com/sydneygahunia/svt-monitor" }],
     bullets: [
       "Created a SwiftUI iOS app that monitors heart rate and sends push notifications when it detects an episode of supraventricular tachycardia, a sudden rapid heartbeat.",
       "Designed a state machine that detects episodes from sustained or sudden heart-rate spikes, validated against simulated real-time data.",
