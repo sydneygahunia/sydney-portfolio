@@ -29,16 +29,16 @@ export const experiences: Experience[] = [
     org: "Steele Foundation",
     period: "Sep 2026 – Present",
     location: "Waterloo, ON",
-    stack: ["Python", "FastAPI", "Microsoft Azure", "pytest", "CI/CD"],
+    stack: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Claude API", "Microsoft Azure", "JavaScript", "HTML/CSS", "CI/CD"],
     bullets: [
       {
-        text: "Build backend features in Python and FastAPI for an AI tool that reads job postings and automatically fills in 19 fields on Waterloo's co-op job board, used to process thousands of postings each term.",
+        text: "Ship backend features in Python and FastAPI for an AI platform that automatically populates structured fields across thousands of WaterlooWorks job postings each term, with automated testing and Azure CI/CD on every release.",
       },
       {
-        text: "Improved how the tool sorts job details into the correct fields, expanding support to 200+ new section types.",
+        text: "Build a nonprofit matching platform using PostgreSQL, pgvector, Python and the Claude API, developing data pipelines to ingest CRA charity data and a FastAPI service that connects students and donors with relevant nonprofit organizations.",
       },
       {
-        text: "Wrote automated tests for every change and verified each release with a regression test suite and automated deployments to Microsoft Azure.",
+        text: "Develop a web platform in HTML, CSS and JavaScript that consolidates Waterloo’s 5 donor-funded co-op programs into a single website.",
       },
     ],
   },
@@ -50,16 +50,16 @@ export const experiences: Experience[] = [
     stack: ["React", "FastAPI", "Claude API", "RAG", "Retell AI", "ElevenLabs", "Docker", "Nginx", "CI/CD"],
     bullets: [
       {
-        text: "Built a full-stack AI help desk app with React and FastAPI that automatically troubleshoots common IT issues for 700+ hospital staff.",
+        text: "Developed a full-stack AI help desk platform with React and FastAPI that automated troubleshooting for common IT issues across 700+ hospital staff.",
       },
       {
-        text: "Built a retrieval-augmented generation (RAG) system that finds the right hospital IT guide for each question and uses the Claude API to give staff accurate, step-by-step answers.",
+        text: "Engineered a retrieval-augmented generation (RAG) pipeline using hospital procedure documents and the Claude API to retrieve relevant guidance and generate grounded, step-by-step support responses.",
       },
       {
-        text: "Built a real-time AI phone agent with Retell AI and ElevenLabs that understands caller requests, looks up on-call physicians and routes calls.",
+        text: "Built a real-time AI voice agent with Retell AI and ElevenLabs for intent detection, on-call physician lookup and automated call routing across hospital switchboard workflows.",
       },
       {
-        text: "Packaged the app with Docker and Nginx for on-site deployment, with automated testing, CI/CD and monitoring.",
+        text: "Containerized the platform with Docker and Nginx for reproducible on-premises deployment, adding automated testing, CI/CD and application monitoring.",
       },
     ],
   },
@@ -79,15 +79,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "Ventra",
+    tagline: "iOS heart-rate monitoring app",
+    stack: ["Swift", "SwiftUI", "SwiftData", "Swift Charts", "XCTest"],
+    links: [{ label: "GitHub", href: "https://github.com/sydneygahunia/svt-monitor" }],
+    bullets: [
+      "Developed a SwiftUI iOS app integrating HealthKit and Apple Watch heart-rate data to monitor cardiovascular activity and alert users when it detects patterns consistent with supraventricular tachycardia episodes.",
+      "Engineered a state-machine detection algorithm for sustained and abrupt heart-rate spikes, validating episode logic against simulated real-time data streams.",
+      "Built persistent episode logging with SwiftData and interactive Swift Charts to visualize heart-rate trends across 30- and 90-day periods.",
+      "Wrote XCTest unit tests for episode-detection logic, breathing-exercise timing and longitudinal trend calculations.",
+    ],
+  },
+  {
     name: "Brim",
     tagline: "Wearable navigation aid for blind users · Hack Western 13",
     stack: ["QNX", "C++", "Python", "TypeScript", "TensorFlow Lite", "React Native", "SQLite"],
-    links: [{ label: "GitHub", href: "https://github.com/tiiffanyho/brim" }],
+    links: [{ label: "GitHub", href: "https://github.com/sydneygahunia/brim" }],
     bullets: [
-      "Built a hat-mounted wearable that detects people and obstacles in a blind user's path and gives spoken directions, using a Raspberry Pi 5, a USB camera and an on-device TensorFlow Lite model with no cloud.",
-      "Developed a real-time C++ pipeline on QNX, using the Sensor Framework for the camera and prioritized processes with message passing that recover on their own within 2 seconds if one fails.",
-      "Created an iPhone app in React Native that pairs securely with the hat over WebSockets, speaks warnings with the phone locked, and saves alerts and settings in SQLite on the hat.",
-      "Automated device setup, testing and boot startup with shell and Python scripts, so the system deploys and runs on the hardware with a single command.",
+      "Developed a wearable assistive system using a Raspberry Pi 5, USB camera and TensorFlow Lite to detect people and obstacles in a blind user’s path and generate real-time spoken navigation guidance.",
+      "Engineered a real-time C++ perception pipeline on QNX, integrating the QNX Sensor Framework for camera capture and on-device inference.",
+      "Built a React Native iOS app that communicates with the wearable over WebSockets, delivers audio alerts while the phone is locked and persists alerts and user settings with SQLite.",
     ],
   },
   {
@@ -103,18 +114,6 @@ export const projects: Project[] = [
       "Built a full-stack e-commerce simulation where virtual robots pick and pack orders in a warehouse, using WebSockets to stream each order's progress live.",
       "Programmed robots to find the shortest route with A* pathfinding and avoid collisions, and built a batch-greedy scheduler that assigns jobs to the nearest free robot, cutting average fulfillment time 15.7% vs. a FIFO baseline.",
       "Prevented overselling and duplicate orders with PostgreSQL transactions and idempotency keys, backed by 80+ automated tests run in GitHub Actions.",
-    ],
-  },
-  {
-    name: "Ventra",
-    tagline: "iOS heart-rate monitoring app",
-    stack: ["Swift", "SwiftUI", "SwiftData", "Swift Charts", "XCTest"],
-    links: [{ label: "GitHub", href: "https://github.com/sydneygahunia/svt-monitor" }],
-    bullets: [
-      "Created a SwiftUI iOS app that monitors heart rate and sends push notifications when it detects an episode of supraventricular tachycardia, a sudden rapid heartbeat.",
-      "Designed a state machine that detects episodes from sustained or sudden heart-rate spikes, validated against simulated real-time data.",
-      "Built episode tracking with SwiftData and interactive Swift Charts that reveal heart-rate trends over 30 and 90 days.",
-      "Wrote XCTest unit tests to verify detection accuracy, breathing guidance timing and trend calculations.",
     ],
   },
 ];
