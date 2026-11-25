@@ -111,9 +111,9 @@ export const projects: Project[] = [
     ],
     wakeUrl: "https://forma-api-je9l.onrender.com/api/ping",
     bullets: [
-      "Built a full-stack e-commerce simulation where virtual robots pick and pack orders in a warehouse, using WebSockets to stream each order's progress live.",
-      "Programmed robots to find the shortest route with A* pathfinding and avoid collisions, and built a batch-greedy scheduler that assigns jobs to the nearest free robot, cutting average fulfillment time 15.7% vs. a FIFO baseline.",
-      "Prevented overselling and duplicate orders with PostgreSQL transactions and idempotency keys, backed by 80+ automated tests run in GitHub Actions.",
+      "Developed a full-stack e-commerce warehouse simulation where autonomous robots pick and pack orders, using WebSockets to stream order and robot state updates in real time.",
+      "Implemented A* pathfinding, collision avoidance and a batch-greedy scheduling algorithm that assigns orders to the nearest available robot, reducing average fulfillment time by 15.7% compared with a FIFO baseline.",
+      "Engineered reliable order processing with PostgreSQL transactions and idempotency keys to prevent overselling and duplicate orders, validated with 80+ automated tests running in GitHub Actions.",
     ],
   },
 ];
