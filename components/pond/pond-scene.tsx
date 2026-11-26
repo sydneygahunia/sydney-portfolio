@@ -285,7 +285,10 @@ export function PondScene({
       raf = requestAnimationFrame(frame);
     };
 
-    // Start the live water once the page has finished loading, so it never competes with the first render
+    // The koi swim from the very first frame (plain 2D canvas, cheap). The WebGL
+    // water is layered in a second after load: compiling its shaders is one ~400ms
+    // task on a slow phone, and doing it any earlier drops the Lighthouse score.
+    if (!reduceMotion) raf = requestAnimationFrame(frame);
     const start = () => {
       water = createWater(glCanvas);
       if (water) {
@@ -295,9 +298,7 @@ export function PondScene({
       if (reduceMotion) {
         drawUnderwater(sceneCtx, layers, w, h, 0, koi, deep, glints);
         water?.frame(sceneCanvas, 0, dim);
-        return;
       }
-      raf = requestAnimationFrame(frame);
     };
     const schedule = () => (startTimer = window.setTimeout(start, 1000));
     if (document.readyState === "complete") schedule();
