@@ -26,19 +26,19 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     role: "Software Engineer",
-    org: "Steele Foundation",
+    org: "Steele Family Foundation",
     period: "Sep 2026 – Present",
     location: "Waterloo, ON",
     stack: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Claude API", "Microsoft Azure", "JavaScript", "HTML/CSS", "CI/CD"],
     bullets: [
       {
-        text: "Ship backend features in Python and FastAPI for an AI platform that automatically populates structured fields across thousands of WaterlooWorks job postings each term, with automated testing and Azure CI/CD on every release.",
+        text: "Ship backend features in Python and FastAPI for an AI platform that structures thousands of job postings each term, with automated testing and Azure CI/CD on every release.",
       },
       {
-        text: "Build a nonprofit matching platform using PostgreSQL, pgvector, Python and the Claude API, developing data pipelines to ingest CRA charity data and a FastAPI service that connects students and donors with relevant nonprofit organizations.",
+        text: "Build a nonprofit matching platform with PostgreSQL, pgvector, Python and the Claude API, including data pipelines for CRA charity data and a FastAPI service that matches students and donors with relevant nonprofit organizations.",
       },
       {
-        text: "Develop a web platform in HTML, CSS and JavaScript that consolidates Waterloo’s 5 donor-funded co-op programs into a single website.",
+        text: "Develop a responsive web platform in HTML, CSS and JavaScript that brings 5 donor-funded co-op programs into a single, consistent experience.",
       },
     ],
   },
